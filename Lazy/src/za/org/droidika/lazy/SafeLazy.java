@@ -17,8 +17,8 @@ import org.apache.http.params.HttpProtocolParams;
 
 public class SafeLazy {
 	private static class SingletonHolder {
-		static DefaultHttpClient client = new DefaultHttpClient();
-		static HttpParams params = new BasicHttpParams();
+		private static final DefaultHttpClient client;
+		private static HttpParams params = new BasicHttpParams();
 		static {
 			System.out.println("in static");
 			HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
